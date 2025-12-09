@@ -3,15 +3,17 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Installing (none needed)"
+      - echo "Install phase - nothing to install"
 
   build:
     commands:
-      - echo "Copying site files"
-      - mkdir output
-      - cp index.html output/
+      - echo "Build phase - preparing output folder"
+      - mkdir -p output
+      - cp index.html output/index.html
+      - echo "Files in output folder:"
+      - ls -R output
 
 artifacts:
-  files:
-    - output/**
   base-directory: output
+  files:
+    - '**/*'
