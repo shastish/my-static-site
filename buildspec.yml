@@ -1,11 +1,17 @@
 version: 0.2
+
 phases:
   install:
     commands:
-      - echo "Starting build..."
+      - echo "Installing (none needed)"
+
   build:
     commands:
-      - echo "No build required for static site"
+      - echo "Copying site files"
+      - mkdir output
+      - cp index.html output/
+
 artifacts:
   files:
-    - '**/*'
+    - output/**
+  base-directory: output
